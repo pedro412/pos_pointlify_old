@@ -1,5 +1,68 @@
+@import './Vars.scss';
+
 body {
+  font-family: $theme-font;
   margin: 0;
   background: #f3f3f3;
   color: #484848;
+  font-size: 16px;
+}
+
+h1 {
+  font-weight: bold;
+  font-size: 30px;
+}
+
+h2 {
+  font-weight: bold;
+  font-size: 24px;
+}
+
+.table {
+  color: #484848 !important;
+}
+
+.bg-light {
+  background-color: #ffffff !important;
+  border-bottom: 1px solid rgb(235, 235, 235) !important;
+}
+
+.bold {
+  font-weight: 700;
+}
+
+.semi {
+  font-weight: 500;
+}
+
+.text-primary {
+  color: #019e71 !important;
+}
+
+.card {
+  border: 1px solid #e4e4e4 !important;
+  border-radius: 4px !important;
+}
+
+.navbar-light .navbar-nav .nav-link {
+  font-size: 14px;
+  color: #484848;
+  font-weight: 500;
+}
+
+.btn-success {
+  background-color: #019e71 !important;
+  border-color: #019e71 !important;
+}
+
+.form-control {
+  height: 46px;
+  border-color: #ebebeb !important;
+}
+
+.btn {
+  height: 46px;
+  font-size: 16px;
+  font-weight: 500;
+  border-radius: 4px!important;
 }
