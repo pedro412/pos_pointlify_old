@@ -4,7 +4,7 @@ import '../assets/styles/Login.scss';
 const Login = () => {
 
   return (
-    <>
+    <div className='container mt-5'>
       <div className='card auth-card'>
         <div className='card-body'>
           <h1 className='text-center'>Inicia sesión</h1>
@@ -40,7 +40,7 @@ const Login = () => {
           </form>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 
