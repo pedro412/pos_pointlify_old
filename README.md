@@ -1,6 +1,6 @@
 # Pointlify App
 
-This repo contains the main application powered by ReactJS.
+This repo contains the main front-end application powered by ReactJS.
 
 ## What is it?
 
