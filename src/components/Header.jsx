@@ -23,22 +23,22 @@ const Header = () => {
       <div className='collapse navbar-collapse' id='navbarSupportedContent'>
         <ul className='navbar-nav mr-auto'>
           <li className='nav-item'>
-            <a className='nav-link' href='/awd'>Inventario</a>
+            <Link className='nav-link' to='/awd'>Inventario</Link>
           </li>
           <li className='nav-item'>
-            <a className='nav-link' href='/wad'>Reportes</a>
+            <Link className='nav-link' to='/wad'>Reportes</Link>
           </li>
           <li className='nav-item'>
-            <a className='nav-link' href='/awd'>Facturas</a>
+            <Link className='nav-link' to='/awd'>Facturas</Link>
           </li>
           <li className='nav-item'>
-            <a className='nav-link' href='/awd'>Organización</a>
+            <Link className='nav-link' to='/awd'>Organización</Link>
           </li>
-          <Link to="/login">
-            <li className='nav-item'>
-              <a className='nav-link' href='/awd'>Sign In</a>
-            </li>
-          </Link>
+        </ul>
+        <ul className='navbar-nav'>
+          <li className='nav-item'>
+            <Link className='nav-link' to='/login'>Inicia sesión</Link>
+          </li>
         </ul>
       </div>
     </nav>
