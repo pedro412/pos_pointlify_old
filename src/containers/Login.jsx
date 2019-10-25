@@ -7,13 +7,15 @@ const Login = () => {
     <div className='container mt-5'>
       <div className='card auth-card'>
         <div className='card-body'>
-          <h1 className='text-center'>Inicia sesión</h1>
+          <h1 className='text-center'>Inicia Sesión</h1>
 
           <button type='button' className='btn btn-twitter btn-block'>
+            <img src='../src/assets/twitter-button.png' />
             Inicia sesión con Twitter
           </button>
 
           <button type='button' className='btn btn-facebook btn-block'>
+            <img src='../src/assets/facebook-button.png' />
             Inicia sesión con Facebook
           </button>
 
@@ -31,7 +33,7 @@ const Login = () => {
               <input type='password' className='form-control' placeholder='Contraseña' />
             </div>
             <div className='text-center'>
-              <button type='submit' className='btn btn-success btn-block'>Inicia sesión</button>
+              <button type='submit' className='btn btn-success btn-block'>Inicia Sesión</button>
             </div>
             <div className='text-center mt-3'>
               <span>¿Aún no tienes cuenta? </span>
