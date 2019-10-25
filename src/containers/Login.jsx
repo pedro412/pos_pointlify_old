@@ -10,10 +10,12 @@ const Login = () => {
           <h1 className='text-center'>Inicia Sesión</h1>
 
           <button type='button' className='btn btn-twitter btn-block'>
+            <img src='../src/assets/twitter-button.png' />
             Inicia sesión con Twitter
           </button>
 
           <button type='button' className='btn btn-facebook btn-block'>
+            <img src='../src/assets/facebook-button.png' />
             Inicia sesión con Facebook
           </button>
 
