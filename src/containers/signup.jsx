@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
 import { FaFacebookF, FaTwitter } from 'react-icons/fa';
 import '../assets/styles/Login.scss';
+import { Link } from 'react-router-dom';
 
-const Login = () => {
+const SignUp = () => {
+
   const [form, setValues] = useState({
     email: '',
     password: '',
@@ -18,38 +19,22 @@ const Login = () => {
 
   const handleSumbit = (event) => {
     event.preventDefault();
-    const { email, password } = form;
-
-    window.fetch('http://localhost:3000/api/auth/sign-in', {
-      method: 'POST',
-      headers: {
-        'Authorization': `Basic ${btoa(`${email}:${password}`)}`,
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        'apiKeyToken': 'admin-api-key',
-      }),
-    })
-      .then((resp) => resp.json())
-      .then((resp) => {
-        console.log(resp);
-      });
   };
 
   return (
     <div className='container mt-5'>
       <div className='card auth-card'>
         <div className='card-body'>
-          <h1 className='text-center'>Inicia Sesión</h1>
+          <h1 className='text-center'>Regístrate</h1>
 
           <button type='button' className='btn btn-twitter btn-block'>
             <FaTwitter className='mr-2' />
-            Inicia sesión con Twitter
+          Inicia sesión con Twitter
           </button>
 
           <button type='button' className='btn btn-facebook btn-block'>
             <FaFacebookF className='mr-2' />
-            Inicia sesión con Facebook
+          Inicia sesión con Facebook
           </button>
 
           <form onSubmit={handleSumbit}>
@@ -73,12 +58,31 @@ const Login = () => {
                 placeholder='Contraseña'
               />
             </div>
+            <div className='form-group'>
+              <input
+                name='password'
+                onChange={handleInput}
+                type='password'
+                className='form-control'
+                placeholder='Confirma tu contraseña'
+              />
+            </div>
+            <div className='form-group'>
+              <input
+                name='organizacion'
+                onChange={handleInput}
+                type='text'
+                className='form-control'
+                aria-describedby='organizacion'
+                placeholder='Nombre de tu negocio'
+              />
+            </div>
             <div className='text-center'>
-              <button type='submit' className='btn btn-success btn-block'>Inicia Sesión</button>
+              <button type='submit' className='btn btn-success btn-block'>Regístrate</button>
             </div>
             <div className='text-center mt-3'>
-              <span>¿Aún no tienes cuenta? </span>
-              <Link to='/signup'>Regístrate</Link>
+              <span>¿Ya tienes cuenta? </span>
+              <Link to='/signin'>Inicia sesión</Link>
             </div>
           </form>
         </div>
@@ -87,4 +91,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default SignUp;

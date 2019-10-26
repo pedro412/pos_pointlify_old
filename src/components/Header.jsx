@@ -1,7 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
 
-const Header = () => {
+const Header = ({ user }) => {
 
   return (
     <nav className='navbar navbar-expand-lg navbar-light bg-light'>
@@ -22,22 +23,31 @@ const Header = () => {
 
       <div className='collapse navbar-collapse' id='navbarSupportedContent'>
         <ul className='navbar-nav mr-auto'>
-          <li className='nav-item'>
-            <Link className='nav-link' to='/awd'>Inventario</Link>
-          </li>
-          <li className='nav-item'>
-            <Link className='nav-link' to='/wad'>Reportes</Link>
-          </li>
-          <li className='nav-item'>
-            <Link className='nav-link' to='/awd'>Facturas</Link>
-          </li>
-          <li className='nav-item'>
-            <Link className='nav-link' to='/awd'>Organización</Link>
-          </li>
+          {
+            user && (
+              <>
+                <li className='nav-item'>
+                  <Link className='nav-link' to='/awd'>Inventario</Link>
+                </li>
+                <li className='nav-item'>
+                  <Link className='nav-link' to='/wad'>Reportes</Link>
+                </li>
+                <li className='nav-item'>
+                  <Link className='nav-link' to='/awd'>Facturas</Link>
+                </li>
+                <li className='nav-item'>
+                  <Link className='nav-link' to='/awd'>Organización</Link>
+                </li>
+              </>
+            )
+          }
         </ul>
         <ul className='navbar-nav'>
           <li className='nav-item'>
-            <Link className='nav-link' to='/login'>Inicia sesión</Link>
+            <Link className='nav-link' to='/signin'>Inicia sesión</Link>
+          </li>
+          <li className='nav-item'>
+            <Link className='nav-link' to='/signup'>Regístrate</Link>
           </li>
         </ul>
       </div>
@@ -45,4 +55,10 @@ const Header = () => {
   );
 };
 
-export default Header;
+const mapSateToProps = (state) => {
+  return {
+    user: state.user,
+  };
+};
+
+export default connect(mapSateToProps, null)(Header);
