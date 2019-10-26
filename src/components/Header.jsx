@@ -33,7 +33,7 @@ const Header = ({ user }) => {
                   <Link className='nav-link' to='/awd'>Facturas</Link>
                 </li>
                 <li className='nav-item'>
-                  <Link className='nav-link' to='/awd'>Cerrar sesión</Link>
+                  <Link className='nav-link' to='/awd'>{user.user.organization}</Link>
                 </li>
               </>
             ) : (

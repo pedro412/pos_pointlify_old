@@ -4,10 +4,10 @@ import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../assets/styles/App.scss';
 import Home from '../containers/Home';
-import Login from '../containers/Login';
+import SignIn from '../containers/SingIn';
 import NotFound from '../containers/NotFound';
 import Layout from '../components/Layout';
-import SignUp from '../containers/signup';
+import SignUp from '../containers/SignUp';
 
 const App = ({ user }) => (
   <BrowserRouter>
@@ -17,7 +17,7 @@ const App = ({ user }) => (
           {!user ? <Redirect to='/signin' /> : <Home />}
         </Route>
         <Route exact path='/signin'>
-          {user ? <Redirect to='/' /> : <Login />}
+          {user ? <Redirect to='/' /> : <SignIn />}
         </Route>
         {/* <Route exact path='/signin' component={Login} /> */}
         <Route exact path='/signup' component={SignUp} />
