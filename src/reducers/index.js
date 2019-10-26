@@ -1,5 +1,14 @@
 const reducer = (state, action) => {
-  return state;
+  switch (action.type) {
+    case 'LOGIN_REQUEST':
+      return {
+        ...state,
+        user: action.payload,
+      };
+
+    default:
+      return state;
+  }
 };
 
 export default reducer;

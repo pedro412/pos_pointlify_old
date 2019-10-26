@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
+import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { FaFacebookF, FaTwitter } from 'react-icons/fa';
+import { loginRequest } from '../actions';
 import '../assets/styles/Login.scss';
 
-const Login = () => {
+const Login = (props) => {
   const [form, setValues] = useState({
     email: '',
     password: '',
@@ -18,22 +20,23 @@ const Login = () => {
 
   const handleSumbit = (event) => {
     event.preventDefault();
-    const { email, password } = form;
+    props.loginRequest(form);
+    props.history.push('/');
 
-    window.fetch('http://localhost:3000/api/auth/sign-in', {
-      method: 'POST',
-      headers: {
-        'Authorization': `Basic ${btoa(`${email}:${password}`)}`,
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        'apiKeyToken': 'admin-api-key',
-      }),
-    })
-      .then((resp) => resp.json())
-      .then((resp) => {
-        console.log(resp);
-      });
+    // window.fetch('http://localhost:3000/api/auth/sign-in', {
+    //   method: 'POST',
+    //   headers: {
+    //     'Authorization': `Basic ${btoa(`${email}:${password}`)}`,
+    //     'Content-Type': 'application/json',
+    //   },
+    //   body: JSON.stringify({
+    //     'apiKeyToken': 'admin-api-key',
+    //   }),
+    // })
+    //   .then((resp) => resp.json())
+    //   .then((resp) => {
+    //     console.log(resp);
+    //   });
   };
 
   return (
@@ -87,4 +90,8 @@ const Login = () => {
   );
 };
 
-export default Login;
+const mapDistpatchToProps = {
+  loginRequest,
+};
+
+export default connect(null, mapDistpatchToProps)(Login);

@@ -22,9 +22,9 @@ const Header = ({ user }) => {
       </button>
 
       <div className='collapse navbar-collapse' id='navbarSupportedContent'>
-        <ul className='navbar-nav mr-auto'>
+        <ul className='navbar-nav ml-auto'>
           {
-            user && (
+            user ? (
               <>
                 <li className='nav-item'>
                   <Link className='nav-link' to='/awd'>Inventario</Link>
@@ -38,17 +38,21 @@ const Header = ({ user }) => {
                 <li className='nav-item'>
                   <Link className='nav-link' to='/awd'>Organización</Link>
                 </li>
+                <li className='nav-item'>
+                  <Link className='nav-link' to='/awd'>Cerrar sesión</Link>
+                </li>
               </>
+            ) : (
+              <ul className='navbar-nav'>
+                <li className='nav-item'>
+                  <Link className='nav-link' to='/signin'>Inicia sesión</Link>
+                </li>
+                <li className='nav-item'>
+                  <Link className='nav-link' to='/signup'>Regístrate</Link>
+                </li>
+              </ul>
             )
           }
-        </ul>
-        <ul className='navbar-nav'>
-          <li className='nav-item'>
-            <Link className='nav-link' to='/signin'>Inicia sesión</Link>
-          </li>
-          <li className='nav-item'>
-            <Link className='nav-link' to='/signup'>Regístrate</Link>
-          </li>
         </ul>
       </div>
     </nav>
