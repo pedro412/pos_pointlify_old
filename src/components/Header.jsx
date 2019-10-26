@@ -30,13 +30,7 @@ const Header = ({ user }) => {
                   <Link className='nav-link' to='/awd'>Inventario</Link>
                 </li>
                 <li className='nav-item'>
-                  <Link className='nav-link' to='/wad'>Reportes</Link>
-                </li>
-                <li className='nav-item'>
                   <Link className='nav-link' to='/awd'>Facturas</Link>
-                </li>
-                <li className='nav-item'>
-                  <Link className='nav-link' to='/awd'>Organización</Link>
                 </li>
                 <li className='nav-item'>
                   <Link className='nav-link' to='/awd'>Cerrar sesión</Link>

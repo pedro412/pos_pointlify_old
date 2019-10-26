@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
-import { Link } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 import { FaFacebookF, FaTwitter } from 'react-icons/fa';
 import { loginRequest } from '../actions';
 import '../assets/styles/Login.scss';
@@ -94,4 +94,4 @@ const mapDistpatchToProps = {
   loginRequest,
 };
 
-export default connect(null, mapDistpatchToProps)(Login);
+export default connect(null, mapDistpatchToProps)(withRouter(Login));

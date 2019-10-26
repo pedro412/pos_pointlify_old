@@ -1,5 +1,6 @@
 import React from 'react';
-import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import { connect } from 'react-redux';
+import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../assets/styles/App.scss';
 import Home from '../containers/Home';
@@ -8,12 +9,17 @@ import NotFound from '../containers/NotFound';
 import Layout from '../components/Layout';
 import SignUp from '../containers/signup';
 
-const App = () => (
+const App = ({ user }) => (
   <BrowserRouter>
     <Layout>
       <Switch>
-        <Route exact path='/' component={Home} />
-        <Route exact path='/signin' component={Login} />
+        <Route exact path='/'>
+          {!user ? <Redirect to='/signin' /> : <Home />}
+        </Route>
+        <Route exact path='/signin'>
+          {user ? <Redirect to='/' /> : <Login />}
+        </Route>
+        {/* <Route exact path='/signin' component={Login} /> */}
         <Route exact path='/signup' component={SignUp} />
         <Route component={NotFound} />
       </Switch>
@@ -21,4 +27,10 @@ const App = () => (
   </BrowserRouter>
 );
 
-export default App;
+const mapSateToProps = (state) => {
+  return {
+    user: state.user,
+  };
+};
+
+export default connect(mapSateToProps, null)(App);
