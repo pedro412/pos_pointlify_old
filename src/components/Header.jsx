@@ -1,6 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import Dropdown from 'react-bootstrap/Dropdown';
 import { connect } from 'react-redux';
+import CustomToggle from './CustomToggle';
 
 const Header = ({ user }) => {
 
@@ -33,7 +35,16 @@ const Header = ({ user }) => {
                   <Link className='nav-link' to='/awd'>Facturas</Link>
                 </li>
                 <li className='nav-item'>
-                  <Link className='nav-link' to='/awd'>{user.user.organization}</Link>
+                  <Dropdown className='nav-link hover'>
+                    <Dropdown.Toggle as={CustomToggle} id='dropdown-basic'>
+                      {user.user.organization}
+                    </Dropdown.Toggle>
+
+                    <Dropdown.Menu>
+                      <Dropdown.Item href='#/action-1'>Cofiguración</Dropdown.Item>
+                      <Dropdown.Item href='#/action-2'>Salir</Dropdown.Item>
+                    </Dropdown.Menu>
+                  </Dropdown>
                 </li>
               </>
             ) : (
