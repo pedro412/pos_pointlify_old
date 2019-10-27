@@ -56,9 +56,9 @@ const SignIn = (props) => {
     <div className='container mt-5'>
       <div className='card auth-card'>
         <div className='card-body'>
-          <h1 className='text-center'>Inicia Sesión</h1>
+          <h1 className='text-center pb-3'>Inicia Sesión</h1>
 
-          <button type='button' className='btn btn-twitter btn-block'>
+          {/* <button type='button' className='btn btn-twitter btn-block'>
             <FaTwitter size={20} className='mr-2' />
             Inicia sesión con Twitter
           </button>
@@ -66,10 +66,11 @@ const SignIn = (props) => {
           <button type='button' className='btn btn-facebook btn-block'>
             <FaFacebookF size={20} className='mr-2' />
             Inicia sesión con Facebook
-          </button>
+          </button> */}
 
           <form onSubmit={handleSumbit}>
-            <p className='text-center mt-3'>o</p>
+            {/* <p className='text-center mt-3'>o</p> */}
+
             <div className='form-group'>
               <input
                 disabled={loading}
