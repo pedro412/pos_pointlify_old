@@ -30,7 +30,7 @@ const SignUp = (props) => {
       return;
     }
 
-    window.fetch('http://localhost:3000/api/auth/sign-up', {
+    window.fetch('https://pointlify.com/api/auth/sign-up', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

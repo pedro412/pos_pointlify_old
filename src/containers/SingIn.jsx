@@ -23,7 +23,7 @@ const SignIn = (props) => {
     event.preventDefault();
     setLoading(true);
     const { email, password } = form;
-    window.fetch('http://localhost:3000/api/auth/sign-in', {
+    window.fetch('https://pointlify.com/api/auth/sign-in', {
       method: 'POST',
       headers: {
         'Authorization': `Basic ${btoa(`${email}:${password}`)}`,
