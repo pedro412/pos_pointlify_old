@@ -67,7 +67,7 @@ const SignUp = (props) => {
         <div className='card-body'>
           <h1 className='text-center pb-3'>Regístrate</h1>
 
-          {/* <button type='button' className='btn btn-twitter btn-block'>
+          {/* removethis <button type='button' className='btn btn-twitter btn-block'>
             <FaTwitter className='mr-2' />
           Inicia sesión con Twitter
           </button>
