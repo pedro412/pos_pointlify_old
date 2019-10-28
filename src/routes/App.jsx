@@ -8,6 +8,7 @@ import SignIn from '../containers/SingIn';
 import NotFound from '../containers/NotFound';
 import Layout from '../components/Layout';
 import SignUp from '../containers/SignUp';
+import Settings from '../containers/Settings';
 
 const App = ({ user }) => (
   <BrowserRouter>
@@ -16,11 +17,15 @@ const App = ({ user }) => (
         <Route exact path='/'>
           {!user ? <Redirect to='/signin' /> : <Home />}
         </Route>
+        <Route exact path='/settings'>
+          {!user ? <Redirect to='/signin' /> : <Settings />}
+        </Route>
         <Route exact path='/signin'>
           {user ? <Redirect to='/' /> : <SignIn />}
         </Route>
-        {/* <Route exact path='/signin' component={Login} /> */}
-        <Route exact path='/signup' component={SignUp} />
+        <Route exact path='/signup'>
+          {user ? <Redirect to='/' /> : <SignUp />}
+        </Route>
         <Route component={NotFound} />
       </Switch>
     </Layout>

@@ -4,16 +4,26 @@ import { Provider } from 'react-redux';
 import { createStore, compose } from 'redux';
 import reducer from './reducers';
 import App from './routes/App';
+import { loadState, saveState } from './localStorage';
 
-const initialState = {
+let initialState = {
   user: false,
-  userMetrics: {
-    orders: 30,
-  },
 };
+
+const persistedState = loadState();
+
+if (persistedState) {
+  initialState = persistedState;
+}
 
 const composeEnhacers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 const store = createStore(reducer, initialState, composeEnhacers());
+
+store.subscribe(() => {
+  saveState({
+    user: store.getState().user,
+  });
+});
 
 ReactDOM.render(
   <Provider store={store}>

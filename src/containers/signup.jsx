@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { FaFacebookF, FaTwitter } from 'react-icons/fa';
 import '../assets/styles/Login.scss';
 import { Link, withRouter } from 'react-router-dom';
 

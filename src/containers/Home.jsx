@@ -4,14 +4,9 @@ import { connect } from 'react-redux';
 const Home = ({ user, userMetrics }) => {
 
   return (
-    <div className='container'>
+    <div>
         home works!
-      <p>
-        Total de ordenes:
-        {' '}
-        {userMetrics.orders}
-        {' '}
-      </p>
+      <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Velit, officia?</p>
     </div>
   );
 };

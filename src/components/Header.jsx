@@ -41,7 +41,7 @@ const Header = ({ user }) => {
                     </Dropdown.Toggle>
 
                     <Dropdown.Menu>
-                      <Dropdown.Item href='#/action-1'>Cofiguración</Dropdown.Item>
+                      <Dropdown.Item href='/settings'>Configuración</Dropdown.Item>
                       <Dropdown.Item href='#/action-2'>Salir</Dropdown.Item>
                     </Dropdown.Menu>
                   </Dropdown>

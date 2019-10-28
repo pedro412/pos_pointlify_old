@@ -4,7 +4,9 @@ import Header from './Header';
 const Layout = ({ children }) => (
   <div>
     <Header />
-    {children}
+    <div className='container mt-4'>
+      {children}
+    </div>
   </div>
 );
 
